@@ -1,0 +1,54 @@
+round,player1,player2,winner,score,tournament,year,surface
+R128,Jannik Sinner,Yoshihito Nishioka,Jannik Sinner,6-4 6-3 6-2,Roland Garros,2025,Clay
+R128,Alexander Zverev,Marcos Giron,Alexander Zverev,6-1 6-3 6-2,Roland Garros,2025,Clay
+R128,Carlos Alcaraz,Casper Ruud,Carlos Alcaraz,6-3 6-2 6-4,Roland Garros,2025,Clay
+R128,Novak Djokovic,Rafael Nadal,Novak Djokovic,6-3 7-6 6-3,Roland Garros,2025,Clay
+R128,Holger Rune,Tomas Etcheverry,Holger Rune,7-6 6-3 6-1,Roland Garros,2025,Clay
+R128,Daniil Medvedev,Nuno Borges,Daniil Medvedev,6-2 6-4 7-5,Roland Garros,2025,Clay
+R128,Andrey Rublev,Miomir Kecmanovic,Andrey Rublev,6-2 6-3 6-1,Roland Garros,2025,Clay
+R128,Stefanos Tsitsipas,Grigor Dimitrov,Stefanos Tsitsipas,7-5 6-3 6-4,Roland Garros,2025,Clay
+R128,Taylor Fritz,Cristian Garin,Taylor Fritz,6-4 7-6 6-2,Roland Garros,2025,Clay
+R128,Tommy Paul,Facundo Diaz Acosta,Tommy Paul,6-3 6-4 6-2,Roland Garros,2025,Clay
+R128,Ben Shelton,Lucas Pouille,Ben Shelton,6-2 6-3 7-5,Roland Garros,2025,Clay
+R128,Felix Auger-Aliassime,Jan-Lennard Struff,Felix Auger-Aliassime,6-4 6-4 6-3,Roland Garros,2025,Clay
+R128,Ugo Humbert,Alejandro Davidovich Fokina,Ugo Humbert,7-5 6-4 6-3,Roland Garros,2025,Clay
+R128,Sebastian Baez,Jiri Lehecka,Sebastian Baez,6-4 6-3 6-2,Roland Garros,2025,Clay
+R128,Lorenzo Musetti,Hugo Gaston,Lorenzo Musetti,6-4 7-5 6-3,Roland Garros,2025,Clay
+R128,Gael Monfils,Matteo Arnaldi,Matteo Arnaldi,6-3 6-4 6-2,Roland Garros,2025,Clay
+R64,Jannik Sinner,Corentin Moutet,Jannik Sinner,6-2 6-3 6-4,Roland Garros,2025,Clay
+R64,Alexander Zverev,Arthur Rinderknech,Alexander Zverev,6-4 6-2 6-3,Roland Garros,2025,Clay
+R64,Carlos Alcaraz,Frances Tiafoe,Carlos Alcaraz,7-6 6-4 6-3,Roland Garros,2025,Clay
+R64,Novak Djokovic,Alexei Popyrin,Novak Djokovic,6-4 7-5 6-3,Roland Garros,2025,Clay
+R64,Holger Rune,Francisco Cerundolo,Holger Rune,6-3 6-4 7-5,Roland Garros,2025,Clay
+R64,Daniil Medvedev,Pedro Cachin,Daniil Medvedev,6-1 6-3 6-4,Roland Garros,2025,Clay
+R64,Andrey Rublev,Maximilian Marterer,Andrey Rublev,6-2 6-3 6-2,Roland Garros,2025,Clay
+R64,Stefanos Tsitsipas,Taro Daniel,Stefanos Tsitsipas,6-3 6-4 7-5,Roland Garros,2025,Clay
+R64,Taylor Fritz,Yannick Hanfmann,Taylor Fritz,6-4 6-3 6-2,Roland Garros,2025,Clay
+R64,Tommy Paul,Adrian Mannarino,Tommy Paul,7-5 6-4 6-3,Roland Garros,2025,Clay
+R64,Ben Shelton,Borna Coric,Ben Shelton,6-3 7-6 6-2,Roland Garros,2025,Clay
+R64,Felix Auger-Aliassime,Luca Van Assche,Felix Auger-Aliassime,6-4 6-3 6-4,Roland Garros,2025,Clay
+R64,Ugo Humbert,Alexei Baranau,Ugo Humbert,6-2 6-3 6-1,Roland Garros,2025,Clay
+R64,Sebastian Baez,Flavio Cobolli,Sebastian Baez,7-6 6-4 6-3,Roland Garros,2025,Clay
+R64,Lorenzo Musetti,Mackenzie McDonald,Lorenzo Musetti,6-3 6-4 7-5,Roland Garros,2025,Clay
+R64,Matteo Arnaldi,Roman Safiullin,Matteo Arnaldi,6-4 6-3 6-2,Roland Garros,2025,Clay
+R32,Jannik Sinner,Matteo Berrettini,Jannik Sinner,6-4 6-2 6-3,Roland Garros,2025,Clay
+R32,Alexander Zverev,Alex de Minaur,Alexander Zverev,7-6 6-4 6-2,Roland Garros,2025,Clay
+R32,Carlos Alcaraz,Tommy Paul,Carlos Alcaraz,6-4 6-2 6-3,Roland Garros,2025,Clay
+R32,Novak Djokovic,Lorenzo Musetti,Lorenzo Musetti,7-5 6-3 6-2,Roland Garros,2025,Clay
+R32,Holger Rune,Sebastian Baez,Holger Rune,6-4 6-3 7-5,Roland Garros,2025,Clay
+R32,Daniil Medvedev,Ben Shelton,Daniil Medvedev,6-4 7-5 6-3,Roland Garros,2025,Clay
+R32,Andrey Rublev,Felix Auger-Aliassime,Andrey Rublev,6-3 6-4 7-6,Roland Garros,2025,Clay
+R32,Stefanos Tsitsipas,Ugo Humbert,Stefanos Tsitsipas,6-4 6-3 6-4,Roland Garros,2025,Clay
+R32,Taylor Fritz,Matteo Arnaldi,Taylor Fritz,6-3 6-4 6-2,Roland Garros,2025,Clay
+R16,Jannik Sinner,Alexander Zverev,Jannik Sinner,6-3 7-6 6-4,Roland Garros,2025,Clay
+R16,Carlos Alcaraz,Lorenzo Musetti,Carlos Alcaraz,6-3 6-4 6-2,Roland Garros,2025,Clay
+R16,Holger Rune,Daniil Medvedev,Holger Rune,7-6 6-4 6-3,Roland Garros,2025,Clay
+R16,Andrey Rublev,Stefanos Tsitsipas,Stefanos Tsitsipas,6-4 6-3 7-6,Roland Garros,2025,Clay
+R16,Taylor Fritz,Lorenzo Sonego,Taylor Fritz,6-4 6-3 6-2,Roland Garros,2025,Clay
+QF,Jannik Sinner,Carlos Alcaraz,Carlos Alcaraz,2-6 6-4 7-6 6-3,Roland Garros,2025,Clay
+QF,Holger Rune,Stefanos Tsitsipas,Holger Rune,6-4 7-5 6-3,Roland Garros,2025,Clay
+QF,Taylor Fritz,Alexander Zverev,Alexander Zverev,7-6 6-3 6-4,Roland Garros,2025,Clay
+QF,Lorenzo Musetti,Casper Ruud,Casper Ruud,6-4 6-3 6-2,Roland Garros,2025,Clay
+SF,Carlos Alcaraz,Holger Rune,Carlos Alcaraz,6-3 6-1 6-3,Roland Garros,2025,Clay
+SF,Alexander Zverev,Casper Ruud,Alexander Zverev,7-6 6-3 6-4,Roland Garros,2025,Clay
+F,Carlos Alcaraz,Alexander Zverev,Carlos Alcaraz,6-3 7-5 6-2,Roland Garros,2025,Clay
