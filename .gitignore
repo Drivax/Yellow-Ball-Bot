@@ -1,0 +1,35 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Build / distribution
+dist/
+build/
+*.egg-info/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Data files (downloaded at runtime)
+tennis-predictor/data/raw/
+tennis-predictor/data/processed/
+
+# Generated model artefacts
+tennis-predictor/models/best_model.pkl
+tennis-predictor/models/charts/
+tennis-predictor/models/evaluation_results.csv
+
+# Generated prediction outputs (except the committed real-results CSV)
+tennis-predictor/results/roland_garros_2025_predictions.csv
+tennis-predictor/results/roland_garros_2025_comparison.csv
+tennis-predictor/results/bracket_comparison.png
+
+# OS artefacts
+.DS_Store
+Thumbs.db
