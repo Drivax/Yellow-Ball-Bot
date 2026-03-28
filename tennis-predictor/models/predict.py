@@ -46,6 +46,7 @@ FEATURES_CSV = PROCESSED_DIR / "features.csv"
 sys.path.insert(0, str(BASE_DIR))
 
 ROUND_ORDER = ["R128", "R64", "R32", "R16", "QF", "SF", "F"]
+UPCOMING_PREDICTIONS_CSV = RESULTS_DIR / "upcoming_predictions.csv"
 
 # ---------------------------------------------------------------------------
 # Feature helpers — build a feature row from per-player stats snapshot
@@ -321,6 +322,62 @@ def plot_bracket_comparison(comparison_df: pd.DataFrame, output_path: Path) -> N
 
 
 # ---------------------------------------------------------------------------
+# Upcoming match predictions
+# ---------------------------------------------------------------------------
+
+def predict_upcoming_matches(
+    upcoming_df: pd.DataFrame,
+    model,
+    feature_cols: list[str],
+    player_stats: dict,
+    features_df: pd.DataFrame,
+) -> pd.DataFrame:
+    """
+    Predict outcomes for upcoming (unplayed) matches.
+
+    *upcoming_df* must have columns: date, round, player1, player2,
+    tournament, year, surface, tourney_level.
+    """
+    rows = []
+    for _, match in upcoming_df.iterrows():
+        p1 = str(match["player1"])
+        p2 = str(match["player2"])
+        surface = str(match.get("surface", "Hard"))
+        round_name = str(match.get("round", "F"))
+        tourney_level = str(match.get("tourney_level", "Davis Cup"))
+        cutoff = pd.Timestamp(match["date"])
+
+        X = build_match_feature_vector(
+            p1_name=p1, p2_name=p2, surface=surface,
+            round_name=round_name, tourney_level=tourney_level,
+            cutoff_date=cutoff, player_stats=player_stats,
+            features_df=features_df, feature_cols=feature_cols,
+        )
+        proba = model.predict_proba(X)[0]
+        p1_win_prob = float(proba[1])
+        predicted_winner = p1 if p1_win_prob >= 0.5 else p2
+        win_prob = p1_win_prob if p1_win_prob >= 0.5 else (1 - p1_win_prob)
+
+        rows.append({
+            "date": match["date"].strftime("%Y-%m-%d") if hasattr(match["date"], "strftime") else match["date"],
+            "round": round_name,
+            "player1": p1,
+            "player2": p2,
+            "tournament": match.get("tournament", ""),
+            "year": match.get("year", ""),
+            "surface": surface,
+            "predicted_winner": predicted_winner,
+            "win_probability": round(win_prob, 4),
+        })
+        logger.info(
+            "Upcoming: %s vs %s → predicted %s (%.1f%%)",
+            p1, p2, predicted_winner, win_prob * 100,
+        )
+
+    return pd.DataFrame(rows)
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -328,6 +385,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Predict Roland Garros 2025 bracket.")
     parser.add_argument("--draw-csv", type=Path, default=None,
                         help="Path to draw CSV (optional; uses embedded data by default).")
+    parser.add_argument("--upcoming", action="store_true",
+                        help="Predict upcoming scheduled matches instead of the RG 2025 bracket.")
     args = parser.parse_args()
 
     if not BEST_MODEL_PATH.exists():
@@ -342,13 +401,14 @@ def main() -> None:
     model_name = bundle["name"]
     logger.info("Loaded model: %s", model_name)
 
-    # Load Roland Garros 2025 draw
-    if args.draw_csv and args.draw_csv.exists():
-        draw_df = pd.read_csv(args.draw_csv)
-    else:
-        from scraping.scraper_tournaments import get_roland_garros_2025_draw
-        draw_df = get_roland_garros_2025_draw()
-    logger.info("Draw has %d matches.", len(draw_df))
+    # Load Roland Garros 2025 draw (only needed for bracket simulation)
+    if not args.upcoming:
+        if args.draw_csv and args.draw_csv.exists():
+            draw_df = pd.read_csv(args.draw_csv)
+        else:
+            from scraping.scraper_tournaments import get_roland_garros_2025_draw
+            draw_df = get_roland_garros_2025_draw()
+        logger.info("Draw has %d matches.", len(draw_df))
 
     # Load historical features for player stat snapshots
     if FEATURES_CSV.exists():
@@ -361,6 +421,40 @@ def main() -> None:
         logger.warning("Features CSV not found. Using default ELO=1500 for all players.")
         features_df = pd.DataFrame()
         player_stats = {}
+
+    # ---------------------------------------------------------------------------
+    # Upcoming matches mode
+    # ---------------------------------------------------------------------------
+    if args.upcoming:
+        from scraping.scraper_tournaments import get_upcoming_matches
+        upcoming_df = get_upcoming_matches()
+        logger.info("Predicting %d upcoming match(es).", len(upcoming_df))
+
+        if FEATURES_CSV.exists():
+            # Use the most recent available cutoff for player stats
+            cutoff = upcoming_df["date"].min()
+            player_stats = _build_player_stats_snapshot(features_df, cutoff)
+
+        upcoming_preds = predict_upcoming_matches(
+            upcoming_df, model, feature_cols, player_stats, features_df
+        )
+
+        RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+        upcoming_preds.to_csv(UPCOMING_PREDICTIONS_CSV, index=False)
+        logger.info("Saved upcoming predictions to %s", UPCOMING_PREDICTIONS_CSV)
+
+        print("\n" + "=" * 70)
+        print("  Upcoming Match Predictions")
+        print("=" * 70)
+        print(f"  {'Date':12}  {'Tournament':15}  {'Player 1':22}  {'Player 2':22}  {'Predicted Winner':22}  {'Prob'}")
+        print("  " + "-" * 103)
+        for _, row in upcoming_preds.iterrows():
+            print(
+                f"  {row['date']:12}  {str(row['tournament']):15}  {row['player1']:22}"
+                f"  {row['player2']:22}  {row['predicted_winner']:22}  {row['win_probability']:.1%}"
+            )
+        print("=" * 70 + "\n")
+        return
 
     # Simulate bracket
     predictions_df = simulate_bracket(draw_df, model, feature_cols, player_stats, features_df)

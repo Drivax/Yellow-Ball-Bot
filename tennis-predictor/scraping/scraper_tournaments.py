@@ -179,6 +179,35 @@ ROLAND_GARROS_2025_RESULTS = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# Upcoming matches (pending results)
+# ---------------------------------------------------------------------------
+
+# Matches that are scheduled but not yet played.
+# Format: date, round, player1, player2, tournament, year, surface, tourney_level
+UPCOMING_MATCHES = [
+    # Davis Cup 2026 — Czechia vs Italy, Final, venue TBD
+    # Jiří Lehečka (CZE, ATP #21) vs Jannik Sinner (ITA, ATP #2)
+    {
+        "date": "2026-03-29",
+        "round": "F",
+        "player1": "Jiri Lehecka",
+        "player2": "Jannik Sinner",
+        "tournament": "Davis Cup",
+        "year": 2026,
+        "surface": "Hard",
+        "tourney_level": "Davis Cup",
+    },
+]
+
+
+def get_upcoming_matches() -> pd.DataFrame:
+    """Return upcoming scheduled matches as a DataFrame."""
+    df = pd.DataFrame(UPCOMING_MATCHES)
+    df["date"] = pd.to_datetime(df["date"])
+    return df
+
+
 def get_roland_garros_2025_draw() -> pd.DataFrame:
     """Return the Roland Garros 2025 draw as a DataFrame."""
     df = pd.DataFrame(
