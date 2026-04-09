@@ -133,7 +133,6 @@ MC_2026_ATP_UPCOMING: list[tuple[str, str, str]] = [
     ("R32", "Ugo Humbert", "Tommy Paul"),
     ("R32", "Casper Ruud", "Ben Shelton"),
     ("R32", "Arthur Fils", "Nicolas Jarry"),
-    ("R32", "Casper Ruud", "Qualifier/Lucky Loser A"),
     # Round of 16 (seeded winners vs previous round winners)
     ("R16", "Jannik Sinner", "Holger Rune"),
     ("R16", "Daniil Medvedev", "Taylor Fritz"),

@@ -1,7 +1,7 @@
 ************************************************************************
                                                                         
         TENNIS PREDICTIONS — MONTE CARLO MASTERS & WTA STUTTGART        
-            Year: 2026   |   Generated: 2026-04-09 17:34 UTC            
+            Year: 2026   |   Generated: 2026-04-09 17:35 UTC            
                                                                         
 ************************************************************************
 
@@ -75,10 +75,6 @@ NOTE: Monte Carlo Masters is an ATP-only event (no WTA draw).
   Arthur Fils                    vs  Nicolas Jarry
       ▶ Arthur Fils  wins  (59.9% confidence)
         (over Nicolas Jarry)
-
-  Casper Ruud                    vs  Qualifier/Lucky Loser A
-      ▶ Casper Ruud  wins  (78.0% confidence)
-        (over Qualifier/Lucky Loser A)
 
   [ Round of 16 ]
   --------------------------------------------------------------------

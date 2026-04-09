@@ -312,10 +312,13 @@ def main() -> None:
     parser.add_argument(
         "--output",
         type=Path,
-        default=RESULTS_DIR / f"monte_carlo_{date.today().year}_predictions.txt",
+        default=None,
         help="Output .txt file path.",
     )
     args = parser.parse_args()
+
+    if args.output is None:
+        args.output = RESULTS_DIR / f"monte_carlo_{args.year}_predictions.txt"
 
     # -----------------------------------------------------------------------
     # Scrape upcoming matches
