@@ -1,0 +1,32 @@
+round,player1,player2,predicted_winner,p1_win_prob,confidence
+R32,Jannik Sinner,Grigor Dimitrov,Jannik Sinner,0.9182,0.9182
+R32,Holger Rune,Flavio Cobolli,Holger Rune,0.7701,0.7701
+R32,Taylor Fritz,Jiri Lehecka,Taylor Fritz,0.7701,0.7701
+R32,Daniil Medvedev,Francisco Cerundolo,Daniil Medvedev,0.8171,0.8171
+R32,Carlos Alcaraz,Tomas Etcheverry,Carlos Alcaraz,0.9264,0.9264
+R32,Stefanos Tsitsipas,Luca Van Assche,Stefanos Tsitsipas,0.7381,0.7381
+R32,Andrey Rublev,Sebastian Baez,Andrey Rublev,0.7153,0.7153
+R32,Alexander Zverev,Karen Khachanov,Alexander Zverev,0.8632,0.8632
+R32,Hubert Hurkacz,Adrian Mannarino,Hubert Hurkacz,0.6788,0.6788
+R32,Alex de Minaur,Miomir Kecmanovic,Alex de Minaur,0.7034,0.7034
+R32,Lorenzo Musetti,Alejandro Davidovich Fokina,Lorenzo Musetti,0.6401,0.6401
+R32,Novak Djokovic,Felix Auger-Aliassime,Novak Djokovic,0.7268,0.7268
+R32,Ugo Humbert,Tommy Paul,Tommy Paul,0.4712,0.5288
+R32,Casper Ruud,Ben Shelton,Casper Ruud,0.5855,0.5855
+R32,Arthur Fils,Nicolas Jarry,Arthur Fils,0.5994,0.5994
+R32,Casper Ruud,Qualifier/Lucky Loser A,Casper Ruud,0.7801,0.7801
+R16,Jannik Sinner,Holger Rune,Jannik Sinner,0.8632,0.8632
+R16,Daniil Medvedev,Taylor Fritz,Daniil Medvedev,0.6401,0.6401
+R16,Carlos Alcaraz,Stefanos Tsitsipas,Carlos Alcaraz,0.8563,0.8563
+R16,Alexander Zverev,Andrey Rublev,Alexander Zverev,0.6401,0.6401
+R16,Alex de Minaur,Hubert Hurkacz,Alex de Minaur,0.5715,0.5715
+R16,Novak Djokovic,Lorenzo Musetti,Novak Djokovic,0.6661,0.6661
+R16,Casper Ruud,Ugo Humbert,Casper Ruud,0.5573,0.5573
+R16,Arthur Fils,Sebastian Baez,Sebastian Baez,0.4569,0.5431
+QF,Jannik Sinner,Daniil Medvedev,Jannik Sinner,0.7597,0.7597
+QF,Carlos Alcaraz,Alexander Zverev,Carlos Alcaraz,0.6401,0.6401
+QF,Alex de Minaur,Novak Djokovic,Novak Djokovic,0.3733,0.6267
+QF,Casper Ruud,Lorenzo Musetti,Lorenzo Musetti,0.4856,0.5144
+SF,Jannik Sinner,Carlos Alcaraz,Jannik Sinner,0.5715,0.5715
+SF,Alex de Minaur,Casper Ruud,Alex de Minaur,0.5573,0.5573
+F,Jannik Sinner,Carlos Alcaraz,Jannik Sinner,0.5715,0.5715

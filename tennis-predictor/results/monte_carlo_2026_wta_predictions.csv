@@ -1,0 +1,16 @@
+round,player1,player2,predicted_winner,p1_win_prob,confidence
+R16,Iga Swiatek,Clara Tauson,Iga Swiatek,0.9042,0.9042
+R16,Mirra Andreeva,Daria Kasatkina,Mirra Andreeva,0.5855,0.5855
+R16,Qinwen Zheng,Maria Sakkari,Qinwen Zheng,0.6267,0.6267
+R16,Elena Rybakina,Liudmila Samsonova,Elena Rybakina,0.7268,0.7268
+R16,Coco Gauff,Madison Keys,Coco Gauff,0.7153,0.7153
+R16,Jasmine Paolini,Laura Siegemund,Jasmine Paolini,0.6661,0.6661
+R16,Aryna Sabalenka,Barbora Krejcikova,Aryna Sabalenka,0.8171,0.8171
+R16,Jessica Pegula,Anna Karolina Schmiedlova,Jessica Pegula,0.7701,0.7701
+QF,Iga Swiatek,Mirra Andreeva,Iga Swiatek,0.8337,0.8337
+QF,Elena Rybakina,Qinwen Zheng,Elena Rybakina,0.5855,0.5855
+QF,Coco Gauff,Jasmine Paolini,Coco Gauff,0.6912,0.6912
+QF,Aryna Sabalenka,Jessica Pegula,Aryna Sabalenka,0.7268,0.7268
+SF,Iga Swiatek,Elena Rybakina,Iga Swiatek,0.7381,0.7381
+SF,Coco Gauff,Aryna Sabalenka,Aryna Sabalenka,0.3599,0.6401
+F,Iga Swiatek,Aryna Sabalenka,Iga Swiatek,0.5715,0.5715
