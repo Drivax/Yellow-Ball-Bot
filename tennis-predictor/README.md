@@ -129,6 +129,24 @@ Outputs:
 jupyter notebook notebooks/exploration.ipynb
 ```
 
+### Step 7 — Run the Streamlit Match Predictor App
+
+```bash
+streamlit run streamlit_app.py
+```
+
+The app supports two workflows:
+- Single match prediction with interactive form inputs.
+- Batch predictions via CSV upload or editable table.
+
+Expected batch CSV columns:
+- `player1`, `player2`, `surface`, `round`, `level`, `date`
+
+Example values:
+- `surface`: Clay, Hard, Grass, Carpet, Unknown
+- `round`: R128, R64, R32, R16, QF, SF, F
+- `level`: Grand Slam, Masters, ATP500, Davis Cup, Tour Finals, Challenger
+
 ---
 
 ## Engineered Features
