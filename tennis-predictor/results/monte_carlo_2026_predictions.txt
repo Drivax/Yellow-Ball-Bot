@@ -1,0 +1,225 @@
+************************************************************************
+                                                                        
+        TENNIS PREDICTIONS — MONTE CARLO MASTERS & WTA STUTTGART        
+            Year: 2026   |   Generated: 2026-04-09 17:35 UTC            
+                                                                        
+************************************************************************
+
+NOTE: Monte Carlo Masters is an ATP-only event (no WTA draw).
+      Women's predictions cover the concurrent WTA Stuttgart clay event.
+
+========================================================================
+           ATP MONTE CARLO MASTERS 2026  (CLAY, MASTERS 1000)           
+               Surface: Clay   |   Model: ELO (fallback)                
+========================================================================
+  Predicted Champion: Jannik Sinner
+
+  [ Round of 32 ]
+  --------------------------------------------------------------------
+  Jannik Sinner                  vs  Grigor Dimitrov
+      ▶ Jannik Sinner  wins  (91.8% confidence)
+        (over Grigor Dimitrov)
+
+  Holger Rune                    vs  Flavio Cobolli
+      ▶ Holger Rune  wins  (77.0% confidence)
+        (over Flavio Cobolli)
+
+  Taylor Fritz                   vs  Jiri Lehecka
+      ▶ Taylor Fritz  wins  (77.0% confidence)
+        (over Jiri Lehecka)
+
+  Daniil Medvedev                vs  Francisco Cerundolo
+      ▶ Daniil Medvedev  wins  (81.7% confidence)
+        (over Francisco Cerundolo)
+
+  Carlos Alcaraz                 vs  Tomas Etcheverry
+      ▶ Carlos Alcaraz  wins  (92.6% confidence)
+        (over Tomas Etcheverry)
+
+  Stefanos Tsitsipas             vs  Luca Van Assche
+      ▶ Stefanos Tsitsipas  wins  (73.8% confidence)
+        (over Luca Van Assche)
+
+  Andrey Rublev                  vs  Sebastian Baez
+      ▶ Andrey Rublev  wins  (71.5% confidence)
+        (over Sebastian Baez)
+
+  Alexander Zverev               vs  Karen Khachanov
+      ▶ Alexander Zverev  wins  (86.3% confidence)
+        (over Karen Khachanov)
+
+  Hubert Hurkacz                 vs  Adrian Mannarino
+      ▶ Hubert Hurkacz  wins  (67.9% confidence)
+        (over Adrian Mannarino)
+
+  Alex de Minaur                 vs  Miomir Kecmanovic
+      ▶ Alex de Minaur  wins  (70.3% confidence)
+        (over Miomir Kecmanovic)
+
+  Lorenzo Musetti                vs  Alejandro Davidovich Fokina
+      ▶ Lorenzo Musetti  wins  (64.0% confidence)
+        (over Alejandro Davidovich Fokina)
+
+  Novak Djokovic                 vs  Felix Auger-Aliassime
+      ▶ Novak Djokovic  wins  (72.7% confidence)
+        (over Felix Auger-Aliassime)
+
+  Ugo Humbert                    vs  Tommy Paul
+      ▶ Tommy Paul  wins  (52.9% confidence)
+        (over Ugo Humbert)
+
+  Casper Ruud                    vs  Ben Shelton
+      ▶ Casper Ruud  wins  (58.6% confidence)
+        (over Ben Shelton)
+
+  Arthur Fils                    vs  Nicolas Jarry
+      ▶ Arthur Fils  wins  (59.9% confidence)
+        (over Nicolas Jarry)
+
+  [ Round of 16 ]
+  --------------------------------------------------------------------
+  Jannik Sinner                  vs  Holger Rune
+      ▶ Jannik Sinner  wins  (86.3% confidence)
+        (over Holger Rune)
+
+  Daniil Medvedev                vs  Taylor Fritz
+      ▶ Daniil Medvedev  wins  (64.0% confidence)
+        (over Taylor Fritz)
+
+  Carlos Alcaraz                 vs  Stefanos Tsitsipas
+      ▶ Carlos Alcaraz  wins  (85.6% confidence)
+        (over Stefanos Tsitsipas)
+
+  Alexander Zverev               vs  Andrey Rublev
+      ▶ Alexander Zverev  wins  (64.0% confidence)
+        (over Andrey Rublev)
+
+  Alex de Minaur                 vs  Hubert Hurkacz
+      ▶ Alex de Minaur  wins  (57.1% confidence)
+        (over Hubert Hurkacz)
+
+  Novak Djokovic                 vs  Lorenzo Musetti
+      ▶ Novak Djokovic  wins  (66.6% confidence)
+        (over Lorenzo Musetti)
+
+  Casper Ruud                    vs  Ugo Humbert
+      ▶ Casper Ruud  wins  (55.7% confidence)
+        (over Ugo Humbert)
+
+  Arthur Fils                    vs  Sebastian Baez
+      ▶ Sebastian Baez  wins  (54.3% confidence)
+        (over Arthur Fils)
+
+  [ Quarterfinal ]
+  --------------------------------------------------------------------
+  Jannik Sinner                  vs  Daniil Medvedev
+      ▶ Jannik Sinner  wins  (76.0% confidence)
+        (over Daniil Medvedev)
+
+  Carlos Alcaraz                 vs  Alexander Zverev
+      ▶ Carlos Alcaraz  wins  (64.0% confidence)
+        (over Alexander Zverev)
+
+  Alex de Minaur                 vs  Novak Djokovic
+      ▶ Novak Djokovic  wins  (62.7% confidence)
+        (over Alex de Minaur)
+
+  Casper Ruud                    vs  Lorenzo Musetti
+      ▶ Lorenzo Musetti  wins  (51.4% confidence)
+        (over Casper Ruud)
+
+  [ Semifinal ]
+  --------------------------------------------------------------------
+  Jannik Sinner                  vs  Carlos Alcaraz
+      ▶ Jannik Sinner  wins  (57.1% confidence)
+        (over Carlos Alcaraz)
+
+  Alex de Minaur                 vs  Casper Ruud
+      ▶ Alex de Minaur  wins  (55.7% confidence)
+        (over Casper Ruud)
+
+  [ Final ]
+  --------------------------------------------------------------------
+  Jannik Sinner                  vs  Carlos Alcaraz
+      ▶ Jannik Sinner  wins  (57.1% confidence)
+        (over Carlos Alcaraz)
+
+
+========================================================================
+                  WTA STUTTGART 2026  (CLAY, WTA 500)                   
+               Surface: Clay   |   Model: ELO (fallback)                
+========================================================================
+  Predicted Champion: Iga Swiatek
+
+  [ Round of 16 ]
+  --------------------------------------------------------------------
+  Iga Swiatek                    vs  Clara Tauson
+      ▶ Iga Swiatek  wins  (90.4% confidence)
+        (over Clara Tauson)
+
+  Mirra Andreeva                 vs  Daria Kasatkina
+      ▶ Mirra Andreeva  wins  (58.6% confidence)
+        (over Daria Kasatkina)
+
+  Qinwen Zheng                   vs  Maria Sakkari
+      ▶ Qinwen Zheng  wins  (62.7% confidence)
+        (over Maria Sakkari)
+
+  Elena Rybakina                 vs  Liudmila Samsonova
+      ▶ Elena Rybakina  wins  (72.7% confidence)
+        (over Liudmila Samsonova)
+
+  Coco Gauff                     vs  Madison Keys
+      ▶ Coco Gauff  wins  (71.5% confidence)
+        (over Madison Keys)
+
+  Jasmine Paolini                vs  Laura Siegemund
+      ▶ Jasmine Paolini  wins  (66.6% confidence)
+        (over Laura Siegemund)
+
+  Aryna Sabalenka                vs  Barbora Krejcikova
+      ▶ Aryna Sabalenka  wins  (81.7% confidence)
+        (over Barbora Krejcikova)
+
+  Jessica Pegula                 vs  Anna Karolina Schmiedlova
+      ▶ Jessica Pegula  wins  (77.0% confidence)
+        (over Anna Karolina Schmiedlova)
+
+  [ Quarterfinal ]
+  --------------------------------------------------------------------
+  Iga Swiatek                    vs  Mirra Andreeva
+      ▶ Iga Swiatek  wins  (83.4% confidence)
+        (over Mirra Andreeva)
+
+  Elena Rybakina                 vs  Qinwen Zheng
+      ▶ Elena Rybakina  wins  (58.6% confidence)
+        (over Qinwen Zheng)
+
+  Coco Gauff                     vs  Jasmine Paolini
+      ▶ Coco Gauff  wins  (69.1% confidence)
+        (over Jasmine Paolini)
+
+  Aryna Sabalenka                vs  Jessica Pegula
+      ▶ Aryna Sabalenka  wins  (72.7% confidence)
+        (over Jessica Pegula)
+
+  [ Semifinal ]
+  --------------------------------------------------------------------
+  Iga Swiatek                    vs  Elena Rybakina
+      ▶ Iga Swiatek  wins  (73.8% confidence)
+        (over Elena Rybakina)
+
+  Coco Gauff                     vs  Aryna Sabalenka
+      ▶ Aryna Sabalenka  wins  (64.0% confidence)
+        (over Coco Gauff)
+
+  [ Final ]
+  --------------------------------------------------------------------
+  Iga Swiatek                    vs  Aryna Sabalenka
+      ▶ Iga Swiatek  wins  (57.1% confidence)
+        (over Aryna Sabalenka)
+
+
+========================================================================
+                             END OF REPORT                              
+========================================================================
