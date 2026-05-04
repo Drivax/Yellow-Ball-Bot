@@ -25,6 +25,45 @@ ROUND_OPTIONS = ["R128", "R64", "R32", "R16", "QF", "SF", "F"]
 LEVEL_OPTIONS = ["Grand Slam", "Masters", "ATP500", "Davis Cup", "Tour Finals", "Challenger"]
 
 
+def apply_ui_styles() -> None:
+    """Inject CSS so action buttons remain high-contrast across Streamlit themes."""
+    st.markdown(
+        """
+        <style>
+        div.stButton > button,
+        div.stDownloadButton > button,
+        button[kind="primaryFormSubmit"] {
+            background: linear-gradient(135deg, #0b2d4d 0%, #1264a3 100%);
+            color: #ffffff !important;
+            border: 1px solid #0a2238;
+            border-radius: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            min-height: 2.7rem;
+            box-shadow: 0 3px 10px rgba(11, 45, 77, 0.25);
+        }
+
+        div.stButton > button:hover,
+        div.stDownloadButton > button:hover,
+        button[kind="primaryFormSubmit"]:hover {
+            background: linear-gradient(135deg, #123c64 0%, #1b7bc6 100%);
+            border-color: #0b2d4d;
+            color: #ffffff !important;
+        }
+
+        div.stButton > button:focus,
+        div.stDownloadButton > button:focus,
+        button[kind="primaryFormSubmit"]:focus {
+            outline: 3px solid rgba(26, 115, 232, 0.5) !important;
+            outline-offset: 2px;
+            color: #ffffff !important;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
 @st.cache_resource
 def load_model_bundle() -> dict:
     with open(MODEL_PATH, "rb") as f:
@@ -287,6 +326,7 @@ def render_batch_tab(model, feature_cols: list[str], features_df: pd.DataFrame) 
 
 def main() -> None:
     st.set_page_config(page_title="Tennis Match Predictor", page_icon="T", layout="wide")
+    apply_ui_styles()
     st.title("Tennis Match Predictor")
     st.caption("Predict one match or many matches with your trained model bundle.")
 

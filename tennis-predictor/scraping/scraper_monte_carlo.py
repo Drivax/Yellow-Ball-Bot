@@ -16,6 +16,7 @@ Usage:
 
 import argparse
 import logging
+import re
 import time
 from datetime import date
 from pathlib import Path
@@ -219,19 +220,157 @@ def _scrape_flashscore_matches(url_path: str) -> list[dict]:
     soup = BeautifulSoup(html, "html.parser")
     matches: list[dict] = []
 
-    # Flashscore mobile uses event rows with class "event__match"
+    # Flashscore HTML varies between seasons; support both "event__participant"
+    # and "event__participant--home/away" patterns.
     for row in soup.find_all(class_=lambda c: c and "event__match" in c):
-        home = row.find(class_=lambda c: c and "event__participant--home" in c)
-        away = row.find(class_=lambda c: c and "event__participant--away" in c)
-        if home and away:
-            matches.append({
-                "round": "Unknown",
-                "player1": home.get_text(strip=True),
-                "player2": away.get_text(strip=True),
-            })
+        participants = [
+            el.get_text(strip=True)
+            for el in row.find_all(class_=lambda c: c and "event__participant" in c)
+        ]
+
+        if len(participants) >= 2:
+            p1, p2 = participants[0], participants[1]
+        else:
+            home = row.find(class_=lambda c: c and "event__participant--home" in c)
+            away = row.find(class_=lambda c: c and "event__participant--away" in c)
+            if not (home and away):
+                continue
+            p1, p2 = home.get_text(strip=True), away.get_text(strip=True)
+
+        stage = row.find(class_=lambda c: c and "event__stage" in c)
+        if not stage:
+            stage = row.find(class_=lambda c: c and "event__time" in c)
+        stage_text = stage.get_text(" ", strip=True) if stage else ""
+
+        round_hint = _extract_round_hint(row)
+        if _should_skip_event(stage_text):
+            continue
+
+        matches.append({
+            "round": round_hint,
+            "player1": _normalize_player_name(p1),
+            "player2": _normalize_player_name(p2),
+        })
+
+    matches = _clean_upcoming_matches(matches)
 
     logger.info("Flashscore returned %d matches from %s", len(matches), url)
     return matches
+
+
+_WHITESPACE_RE = re.compile(r"\s+")
+_NAME_CLEAN_RE = re.compile(r"[^A-Za-z .\-']")
+_SKIP_MARKERS = {
+    "finished",
+    "abandoned",
+    "cancelled",
+    "walkover",
+    "retired",
+    "wo",
+    "postponed",
+}
+_PLACEHOLDER_NAMES = {
+    "tbd",
+    "bye",
+    "winner",
+    "loser",
+    "qualifier",
+    "lucky loser",
+    "q",
+    "ll",
+}
+
+
+def _normalize_player_name(name: str) -> str:
+    cleaned = _NAME_CLEAN_RE.sub(" ", str(name))
+    return _WHITESPACE_RE.sub(" ", cleaned).strip()
+
+
+def _extract_round_hint(row) -> str:
+    """Infer round from nearby heading text when available."""
+    probe = row
+    for _ in range(4):
+        probe = probe.find_previous(
+            class_=lambda c: c and any(
+                marker in c for marker in ("event__header", "event__title", "event__round")
+            )
+        )
+        if not probe:
+            break
+        text = probe.get_text(" ", strip=True).lower()
+        if any(tok in text for tok in ["r128", "round of 128", "1st round"]):
+            return "R128"
+        if any(tok in text for tok in ["r64", "round of 64", "2nd round"]):
+            return "R64"
+        if any(tok in text for tok in ["r32", "round of 32", "3rd round"]):
+            return "R32"
+        if any(tok in text for tok in ["r16", "round of 16", "4th round"]):
+            return "R16"
+        if any(tok in text for tok in ["quarter", "qf"]):
+            return "QF"
+        if any(tok in text for tok in ["semi", "sf"]):
+            return "SF"
+        if "final" in text:
+            return "F"
+    return "Unknown"
+
+
+def _should_skip_event(stage_text: str) -> bool:
+    """Skip completed/invalid events and keep only incoming or imminent matches."""
+    text = str(stage_text).strip().lower()
+    if not text:
+        return False
+
+    if any(marker in text for marker in _SKIP_MARKERS):
+        return True
+    # Finished matches on Flashscore often look like score fragments.
+    if re.search(r"\b\d{1,2}\s*[-:]\s*\d{1,2}\b", text):
+        return True
+    return False
+
+
+def _is_placeholder_name(name: str) -> bool:
+    lower = name.strip().lower()
+    return any(token == lower or token in lower for token in _PLACEHOLDER_NAMES)
+
+
+def _is_plausible_name(name: str) -> bool:
+    if len(name) < 4:
+        return False
+    if _is_placeholder_name(name):
+        return False
+    alpha_count = sum(ch.isalpha() for ch in name)
+    return alpha_count >= 3
+
+
+def _clean_upcoming_matches(matches: list[dict]) -> list[dict]:
+    """Normalize, dedupe and keep plausible incoming matchups only."""
+    seen: set[tuple[str, str, str]] = set()
+    clean: list[dict] = []
+
+    for item in matches:
+        p1 = _normalize_player_name(item.get("player1", ""))
+        p2 = _normalize_player_name(item.get("player2", ""))
+        rnd = str(item.get("round", "Unknown") or "Unknown")
+
+        if not p1 or not p2 or p1.lower() == p2.lower():
+            continue
+        if not (_is_plausible_name(p1) and _is_plausible_name(p2)):
+            continue
+
+        key = (rnd, p1.lower(), p2.lower())
+        alt_key = (rnd, p2.lower(), p1.lower())
+        if key in seen or alt_key in seen:
+            continue
+        seen.add(key)
+        clean.append({"round": rnd, "player1": p1, "player2": p2})
+
+    # If extraction looks obviously broken, force fallback draw for reliability.
+    if 0 < len(clean) < 4:
+        logger.warning("Live scrape returned too few plausible upcoming matches; using fallback.")
+        return []
+
+    return clean
 
 
 def scrape_atp_monte_carlo_live(year: int = 2026) -> list[dict]:
