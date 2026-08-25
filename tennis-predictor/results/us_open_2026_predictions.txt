@@ -1,415 +1,61 @@
 ************************************************************************
                                                                         
-                      TENNIS PREDICTIONS — US OPEN                      
-            Year: 2026   |   Generated: 2026-08-25 14:37 UTC            
+                      TENNIS PREDICTIONS - US OPEN                      
+            Year: 2026   |   Qualifying matches shown                 
                                                                         
 ************************************************************************
 
   Surface: Hard (outdoor)  |  Venue: USTA Billie Jean King National Tennis Center
   Location: Flushing Meadows, New York
+  Model: ELO (fallback)  |  Unknown qualifying players use neutral ratings
 
 ========================================================================
-                  ATP US OPEN 2026  (HARD, GRAND SLAM)                  
-               Surface: Hard   |   Model: ELO (fallback)                
+                  ATP US OPEN 2026 QUALIFYING                         
 ========================================================================
-  Predicted Champion: Jannik Sinner
+  Scheduled: 25 August 2026
 
-  [ Round of 128 ]
+  [ Qualifying - 17:00 ]
   --------------------------------------------------------------------
-  Jannik Sinner                  vs  Alexei Popyrin
-      ▶ Jannik Sinner  wins  (96.6% confidence)
-        (over Alexei Popyrin)
+  B. Shick                      vs  Clement Tabur
+      > B. Shick  wins  (50.0% confidence)
+        (over Clement Tabur)
 
-  Sebastian Korda                vs  Tomas Machac
-      ▶ Sebastian Korda  wins  (54.3% confidence)
-        (over Tomas Machac)
+  Timofey Skatov                vs  Gilles-Arnaud Bailly
+      > Timofey Skatov  wins  (50.0% confidence)
+        (over Gilles-Arnaud Bailly)
 
-  Taylor Fritz                   vs  Christopher Eubanks
-      ▶ Taylor Fritz  wins  (83.4% confidence)
-        (over Christopher Eubanks)
+  M. Antonius                   vs  H. Searle
+      > M. Antonius  wins  (50.0% confidence)
+        (over H. Searle)
 
-  Andrey Rublev                  vs  Jiri Lehecka
-      ▶ Andrey Rublev  wins  (83.4% confidence)
-        (over Jiri Lehecka)
+  Scheduled: 26 August 2026
 
-  Carlos Alcaraz                 vs  Alejandro Davidovich Fokina
-      ▶ Carlos Alcaraz  wins  (94.4% confidence)
-        (over Alejandro Davidovich Fokina)
-
-  Holger Rune                    vs  Frances Tiafoe
-      ▶ Holger Rune  wins  (66.6% confidence)
-        (over Frances Tiafoe)
-
-  Tommy Paul                     vs  Sebastian Baez
-      ▶ Tommy Paul  wins  (69.1% confidence)
-        (over Sebastian Baez)
-
-  Alexander Zverev               vs  Matteo Berrettini
-      ▶ Alexander Zverev  wins  (90.4% confidence)
-        (over Matteo Berrettini)
-
-  Novak Djokovic                 vs  Jack Draper
-      ▶ Novak Djokovic  wins  (78.0% confidence)
-        (over Jack Draper)
-
-  Ben Shelton                    vs  Karen Khachanov
-      ▶ Ben Shelton  wins  (76.0% confidence)
-        (over Karen Khachanov)
-
-  Hubert Hurkacz                 vs  Arthur Fils
-      ▶ Hubert Hurkacz  wins  (58.6% confidence)
-        (over Arthur Fils)
-
-  Ugo Humbert                    vs  Lorenzo Musetti
-      ▶ Ugo Humbert  wins  (54.3% confidence)
-        (over Lorenzo Musetti)
-
-  Daniil Medvedev                vs  Francisco Cerundolo
-      ▶ Daniil Medvedev  wins  (87.6% confidence)
-        (over Francisco Cerundolo)
-
-  Stefanos Tsitsipas             vs  Felix Auger-Aliassime
-      ▶ Stefanos Tsitsipas  wins  (54.3% confidence)
-        (over Felix Auger-Aliassime)
-
-  Alex de Minaur                 vs  Casper Ruud
-      ▶ Alex de Minaur  wins  (61.3% confidence)
-        (over Casper Ruud)
-
-  Grigor Dimitrov                vs  Sebastian Korda
-      ▶ Grigor Dimitrov  wins  (61.3% confidence)
-        (over Sebastian Korda)
-
-  [ Round of 64 ]
+  [ Qualifying - time to be determined ]
   --------------------------------------------------------------------
-  Jannik Sinner                  vs  Taylor Fritz
-      ▶ Jannik Sinner  wins  (83.4% confidence)
-        (over Taylor Fritz)
+  Frederico Ferreira Silva      vs  Jurij Rodionov
+      > Frederico Ferreira Silva  wins  (50.0% confidence)
+        (over Jurij Rodionov)
 
-  Andrey Rublev                  vs  Holger Rune
-      ▶ Andrey Rublev  wins  (58.6% confidence)
-        (over Holger Rune)
+  Francesco Passaro             vs  Tom Gentzsch
+      > Francesco Passaro  wins  (50.0% confidence)
+        (over Tom Gentzsch)
 
-  Carlos Alcaraz                 vs  Tommy Paul
-      ▶ Carlos Alcaraz  wins  (85.6% confidence)
-        (over Tommy Paul)
+  Kyrian Jacquet                vs  Mohamed Aziz Dougaz
+      > Kyrian Jacquet  wins  (50.0% confidence)
+        (over Mohamed Aziz Dougaz)
 
-  Alexander Zverev               vs  Novak Djokovic
-      ▶ Alexander Zverev  wins  (65.3% confidence)
-        (over Novak Djokovic)
+  Jacob Fearnley                vs  P. Luka
+      > Jacob Fearnley  wins  (50.0% confidence)
+        (over P. Luka)
 
-  Ben Shelton                    vs  Hubert Hurkacz
-      ▶ Ben Shelton  wins  (57.1% confidence)
-        (over Hubert Hurkacz)
+  Otto Virtanen                 vs  J. Pinnington Jones
+      > Otto Virtanen  wins  (50.0% confidence)
+        (over J. Pinnington Jones)
 
-  Ugo Humbert                    vs  Daniil Medvedev
-      ▶ Daniil Medvedev  wins  (79.0% confidence)
-        (over Ugo Humbert)
-
-  Stefanos Tsitsipas             vs  Alex de Minaur
-      ▶ Alex de Minaur  wins  (54.3% confidence)
-        (over Stefanos Tsitsipas)
-
-  Grigor Dimitrov                vs  Felix Auger-Aliassime
-      ▶ Grigor Dimitrov  wins  (55.7% confidence)
-        (over Felix Auger-Aliassime)
-
-  [ Round of 32 ]
-  --------------------------------------------------------------------
-  Jannik Sinner                  vs  Andrey Rublev
-      ▶ Jannik Sinner  wins  (84.2% confidence)
-        (over Andrey Rublev)
-
-  Carlos Alcaraz                 vs  Alexander Zverev
-      ▶ Carlos Alcaraz  wins  (65.3% confidence)
-        (over Alexander Zverev)
-
-  Ben Shelton                    vs  Daniil Medvedev
-      ▶ Daniil Medvedev  wins  (67.9% confidence)
-        (over Ben Shelton)
-
-  Alex de Minaur                 vs  Grigor Dimitrov
-      ▶ Alex de Minaur  wins  (52.9% confidence)
-        (over Grigor Dimitrov)
-
-  Taylor Fritz                   vs  Tommy Paul
-      ▶ Taylor Fritz  wins  (61.3% confidence)
-        (over Tommy Paul)
-
-  Novak Djokovic                 vs  Hubert Hurkacz
-      ▶ Novak Djokovic  wins  (64.0% confidence)
-        (over Hubert Hurkacz)
-
-  Holger Rune                    vs  Ugo Humbert
-      ▶ Holger Rune  wins  (59.9% confidence)
-        (over Ugo Humbert)
-
-  Stefanos Tsitsipas             vs  Felix Auger-Aliassime
-      ▶ Stefanos Tsitsipas  wins  (54.3% confidence)
-        (over Felix Auger-Aliassime)
-
-  [ Round of 16 ]
-  --------------------------------------------------------------------
-  Jannik Sinner                  vs  Carlos Alcaraz
-      ▶ Jannik Sinner  wins  (57.1% confidence)
-        (over Carlos Alcaraz)
-
-  Ben Shelton                    vs  Taylor Fritz
-      ▶ Taylor Fritz  wins  (55.7% confidence)
-        (over Ben Shelton)
-
-  Alexander Zverev               vs  Novak Djokovic
-      ▶ Alexander Zverev  wins  (65.3% confidence)
-        (over Novak Djokovic)
-
-  Daniil Medvedev                vs  Andrey Rublev
-      ▶ Daniil Medvedev  wins  (64.0% confidence)
-        (over Andrey Rublev)
-
-  Alex de Minaur                 vs  Holger Rune
-      ▶ Holger Rune  wins  (54.3% confidence)
-        (over Alex de Minaur)
-
-  Hubert Hurkacz                 vs  Ugo Humbert
-      ▶ Hubert Hurkacz  wins  (57.1% confidence)
-        (over Ugo Humbert)
-
-  Grigor Dimitrov                vs  Stefanos Tsitsipas
-      ▶ Grigor Dimitrov  wins  (51.4% confidence)
-        (over Stefanos Tsitsipas)
-
-  Tommy Paul                     vs  Felix Auger-Aliassime
-      ▶ Tommy Paul  wins  (61.3% confidence)
-        (over Felix Auger-Aliassime)
-
-  [ Quarterfinal ]
-  --------------------------------------------------------------------
-  Jannik Sinner                  vs  Ben Shelton
-      ▶ Jannik Sinner  wins  (86.3% confidence)
-        (over Ben Shelton)
-
-  Carlos Alcaraz                 vs  Alexander Zverev
-      ▶ Carlos Alcaraz  wins  (65.3% confidence)
-        (over Alexander Zverev)
-
-  Daniil Medvedev                vs  Alex de Minaur
-      ▶ Daniil Medvedev  wins  (74.9% confidence)
-        (over Alex de Minaur)
-
-  Grigor Dimitrov                vs  Tommy Paul
-      ▶ Tommy Paul  wins  (55.7% confidence)
-        (over Grigor Dimitrov)
-
-  [ Semifinal ]
-  --------------------------------------------------------------------
-  Jannik Sinner                  vs  Carlos Alcaraz
-      ▶ Jannik Sinner  wins  (57.1% confidence)
-        (over Carlos Alcaraz)
-
-  Daniil Medvedev                vs  Grigor Dimitrov
-      ▶ Daniil Medvedev  wins  (77.0% confidence)
-        (over Grigor Dimitrov)
-
-  [ Final ]
-  --------------------------------------------------------------------
-  Jannik Sinner                  vs  Carlos Alcaraz
-      ▶ Jannik Sinner  wins  (57.1% confidence)
-        (over Carlos Alcaraz)
-
+  Daniel Rincón                 vs  J. Lee
+      > Daniel Rincón  wins  (50.0% confidence)
+        (over J. Lee)
 
 ========================================================================
-                  WTA US OPEN 2026  (HARD, GRAND SLAM)                  
-               Surface: Hard   |   Model: ELO (fallback)                
-========================================================================
-  Predicted Champion: Aryna Sabalenka
-
-  [ Round of 128 ]
-  --------------------------------------------------------------------
-  Aryna Sabalenka                vs  Anna Kalinskaya
-      ▶ Aryna Sabalenka  wins  (92.6% confidence)
-        (over Anna Kalinskaya)
-
-  Emma Navarro                   vs  Paula Badosa
-      ▶ Emma Navarro  wins  (67.9% confidence)
-        (over Paula Badosa)
-
-  Coco Gauff                     vs  Veronika Kudermetova
-      ▶ Coco Gauff  wins  (86.3% confidence)
-        (over Veronika Kudermetova)
-
-  Danielle Collins               vs  Beatriz Haddad Maia
-      ▶ Danielle Collins  wins  (57.1% confidence)
-        (over Beatriz Haddad Maia)
-
-  Iga Swiatek                    vs  Caroline Wozniacki
-      ▶ Iga Swiatek  wins  (90.4% confidence)
-        (over Caroline Wozniacki)
-
-  Mirra Andreeva                 vs  Daria Kasatkina
-      ▶ Mirra Andreeva  wins  (55.7% confidence)
-        (over Daria Kasatkina)
-
-  Madison Keys                   vs  Karolina Muchova
-      ▶ Madison Keys  wins  (64.0% confidence)
-        (over Karolina Muchova)
-
-  Jessica Pegula                 vs  Liudmila Samsonova
-      ▶ Jessica Pegula  wins  (74.9% confidence)
-        (over Liudmila Samsonova)
-
-  Elena Rybakina                 vs  Elina Svitolina
-      ▶ Elena Rybakina  wins  (74.9% confidence)
-        (over Elina Svitolina)
-
-  Qinwen Zheng                   vs  Maria Sakkari
-      ▶ Qinwen Zheng  wins  (70.3% confidence)
-        (over Maria Sakkari)
-
-  Jasmine Paolini                vs  Barbora Krejcikova
-      ▶ Barbora Krejcikova  wins  (51.4% confidence)
-        (over Jasmine Paolini)
-
-  Anna Kalinskaya                vs  Beatriz Haddad Maia
-      ▶ Beatriz Haddad Maia  wins  (54.3% confidence)
-        (over Anna Kalinskaya)
-
-  [ Round of 64 ]
-  --------------------------------------------------------------------
-  Aryna Sabalenka                vs  Emma Navarro
-      ▶ Aryna Sabalenka  wins  (84.2% confidence)
-        (over Emma Navarro)
-
-  Coco Gauff                     vs  Danielle Collins
-      ▶ Coco Gauff  wins  (79.0% confidence)
-        (over Danielle Collins)
-
-  Iga Swiatek                    vs  Mirra Andreeva
-      ▶ Iga Swiatek  wins  (82.5% confidence)
-        (over Mirra Andreeva)
-
-  Madison Keys                   vs  Jessica Pegula
-      ▶ Jessica Pegula  wins  (61.3% confidence)
-        (over Madison Keys)
-
-  Elena Rybakina                 vs  Qinwen Zheng
-      ▶ Elena Rybakina  wins  (54.3% confidence)
-        (over Qinwen Zheng)
-
-  Jasmine Paolini                vs  Karolina Muchova
-      ▶ Jasmine Paolini  wins  (55.7% confidence)
-        (over Karolina Muchova)
-
-  Daria Kasatkina                vs  Barbora Krejcikova
-      ▶ Barbora Krejcikova  wins  (54.3% confidence)
-        (over Daria Kasatkina)
-
-  Paula Badosa                   vs  Liudmila Samsonova
-      ▶ Liudmila Samsonova  wins  (55.7% confidence)
-        (over Paula Badosa)
-
-  [ Round of 32 ]
-  --------------------------------------------------------------------
-  Aryna Sabalenka                vs  Coco Gauff
-      ▶ Aryna Sabalenka  wins  (67.9% confidence)
-        (over Coco Gauff)
-
-  Iga Swiatek                    vs  Madison Keys
-      ▶ Iga Swiatek  wins  (79.0% confidence)
-        (over Madison Keys)
-
-  Elena Rybakina                 vs  Jasmine Paolini
-      ▶ Elena Rybakina  wins  (66.6% confidence)
-        (over Jasmine Paolini)
-
-  Daria Kasatkina                vs  Emma Navarro
-      ▶ Emma Navarro  wins  (58.6% confidence)
-        (over Daria Kasatkina)
-
-  Jessica Pegula                 vs  Qinwen Zheng
-      ▶ Jessica Pegula  wins  (57.1% confidence)
-        (over Qinwen Zheng)
-
-  Danielle Collins               vs  Barbora Krejcikova
-      ▶ Barbora Krejcikova  wins  (55.7% confidence)
-        (over Danielle Collins)
-
-  Mirra Andreeva                 vs  Paula Badosa
-      ▶ Mirra Andreeva  wins  (65.3% confidence)
-        (over Paula Badosa)
-
-  Karolina Muchova               vs  Liudmila Samsonova
-      ▶ Karolina Muchova  wins  (51.4% confidence)
-        (over Liudmila Samsonova)
-
-  [ Round of 16 ]
-  --------------------------------------------------------------------
-  Aryna Sabalenka                vs  Iga Swiatek
-      ▶ Aryna Sabalenka  wins  (55.7% confidence)
-        (over Iga Swiatek)
-
-  Coco Gauff                     vs  Madison Keys
-      ▶ Coco Gauff  wins  (69.1% confidence)
-        (over Madison Keys)
-
-  Elena Rybakina                 vs  Emma Navarro
-      ▶ Elena Rybakina  wins  (61.3% confidence)
-        (over Emma Navarro)
-
-  Daria Kasatkina                vs  Jessica Pegula
-      ▶ Jessica Pegula  wins  (71.5% confidence)
-        (over Daria Kasatkina)
-
-  Qinwen Zheng                   vs  Danielle Collins
-      ▶ Qinwen Zheng  wins  (66.6% confidence)
-        (over Danielle Collins)
-
-  Barbora Krejcikova             vs  Mirra Andreeva
-      ▶ Mirra Andreeva  wins  (51.4% confidence)
-        (over Barbora Krejcikova)
-
-  Jasmine Paolini                vs  Karolina Muchova
-      ▶ Jasmine Paolini  wins  (55.7% confidence)
-        (over Karolina Muchova)
-
-  Paula Badosa                   vs  Liudmila Samsonova
-      ▶ Liudmila Samsonova  wins  (55.7% confidence)
-        (over Paula Badosa)
-
-  [ Quarterfinal ]
-  --------------------------------------------------------------------
-  Aryna Sabalenka                vs  Coco Gauff
-      ▶ Aryna Sabalenka  wins  (67.9% confidence)
-        (over Coco Gauff)
-
-  Iga Swiatek                    vs  Elena Rybakina
-      ▶ Iga Swiatek  wins  (72.7% confidence)
-        (over Elena Rybakina)
-
-  Jessica Pegula                 vs  Qinwen Zheng
-      ▶ Jessica Pegula  wins  (57.1% confidence)
-        (over Qinwen Zheng)
-
-  Mirra Andreeva                 vs  Jasmine Paolini
-      ▶ Mirra Andreeva  wins  (52.9% confidence)
-        (over Jasmine Paolini)
-
-  [ Semifinal ]
-  --------------------------------------------------------------------
-  Aryna Sabalenka                vs  Iga Swiatek
-      ▶ Aryna Sabalenka  wins  (55.7% confidence)
-        (over Iga Swiatek)
-
-  Jessica Pegula                 vs  Mirra Andreeva
-      ▶ Jessica Pegula  wins  (66.6% confidence)
-        (over Mirra Andreeva)
-
-  [ Final ]
-  --------------------------------------------------------------------
-  Aryna Sabalenka                vs  Iga Swiatek
-      ▶ Aryna Sabalenka  wins  (55.7% confidence)
-        (over Iga Swiatek)
-
-
-========================================================================
-                             END OF REPORT                              
+                             END OF REPORT                             
 ========================================================================
