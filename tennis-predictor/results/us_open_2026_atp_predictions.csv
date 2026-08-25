@@ -1,0 +1,48 @@
+round,player1,player2,predicted_winner,p1_win_prob,confidence
+R128,Jannik Sinner,Alexei Popyrin,Jannik Sinner,0.9657,0.9657
+R128,Sebastian Korda,Tomas Machac,Sebastian Korda,0.5431,0.5431
+R128,Taylor Fritz,Christopher Eubanks,Taylor Fritz,0.8337,0.8337
+R128,Andrey Rublev,Jiri Lehecka,Andrey Rublev,0.8337,0.8337
+R128,Carlos Alcaraz,Alejandro Davidovich Fokina,Carlos Alcaraz,0.9438,0.9438
+R128,Holger Rune,Frances Tiafoe,Holger Rune,0.6661,0.6661
+R128,Tommy Paul,Sebastian Baez,Tommy Paul,0.6912,0.6912
+R128,Alexander Zverev,Matteo Berrettini,Alexander Zverev,0.9042,0.9042
+R128,Novak Djokovic,Jack Draper,Novak Djokovic,0.7801,0.7801
+R128,Ben Shelton,Karen Khachanov,Ben Shelton,0.7597,0.7597
+R128,Hubert Hurkacz,Arthur Fils,Hubert Hurkacz,0.5855,0.5855
+R128,Ugo Humbert,Lorenzo Musetti,Ugo Humbert,0.5431,0.5431
+R128,Daniil Medvedev,Francisco Cerundolo,Daniil Medvedev,0.8762,0.8762
+R128,Stefanos Tsitsipas,Felix Auger-Aliassime,Stefanos Tsitsipas,0.5431,0.5431
+R128,Alex de Minaur,Casper Ruud,Alex de Minaur,0.6131,0.6131
+R128,Grigor Dimitrov,Sebastian Korda,Grigor Dimitrov,0.6131,0.6131
+R64,Jannik Sinner,Taylor Fritz,Jannik Sinner,0.8337,0.8337
+R64,Andrey Rublev,Holger Rune,Andrey Rublev,0.5855,0.5855
+R64,Carlos Alcaraz,Tommy Paul,Carlos Alcaraz,0.8563,0.8563
+R64,Alexander Zverev,Novak Djokovic,Alexander Zverev,0.6532,0.6532
+R64,Ben Shelton,Hubert Hurkacz,Ben Shelton,0.5715,0.5715
+R64,Ugo Humbert,Daniil Medvedev,Daniil Medvedev,0.2102,0.7898
+R64,Stefanos Tsitsipas,Alex de Minaur,Alex de Minaur,0.4569,0.5431
+R64,Grigor Dimitrov,Felix Auger-Aliassime,Grigor Dimitrov,0.5573,0.5573
+R32,Jannik Sinner,Andrey Rublev,Jannik Sinner,0.8415,0.8415
+R32,Carlos Alcaraz,Alexander Zverev,Carlos Alcaraz,0.6532,0.6532
+R32,Ben Shelton,Daniil Medvedev,Daniil Medvedev,0.3212,0.6788
+R32,Alex de Minaur,Grigor Dimitrov,Alex de Minaur,0.5288,0.5288
+R32,Taylor Fritz,Tommy Paul,Taylor Fritz,0.6131,0.6131
+R32,Novak Djokovic,Hubert Hurkacz,Novak Djokovic,0.6401,0.6401
+R32,Holger Rune,Ugo Humbert,Holger Rune,0.5994,0.5994
+R32,Stefanos Tsitsipas,Felix Auger-Aliassime,Stefanos Tsitsipas,0.5431,0.5431
+R16,Jannik Sinner,Carlos Alcaraz,Jannik Sinner,0.5715,0.5715
+R16,Ben Shelton,Taylor Fritz,Taylor Fritz,0.4427,0.5573
+R16,Alexander Zverev,Novak Djokovic,Alexander Zverev,0.6532,0.6532
+R16,Daniil Medvedev,Andrey Rublev,Daniil Medvedev,0.6401,0.6401
+R16,Alex de Minaur,Holger Rune,Holger Rune,0.4569,0.5431
+R16,Hubert Hurkacz,Ugo Humbert,Hubert Hurkacz,0.5715,0.5715
+R16,Grigor Dimitrov,Stefanos Tsitsipas,Grigor Dimitrov,0.5144,0.5144
+R16,Tommy Paul,Felix Auger-Aliassime,Tommy Paul,0.6131,0.6131
+QF,Jannik Sinner,Ben Shelton,Jannik Sinner,0.8632,0.8632
+QF,Carlos Alcaraz,Alexander Zverev,Carlos Alcaraz,0.6532,0.6532
+QF,Daniil Medvedev,Alex de Minaur,Daniil Medvedev,0.7491,0.7491
+QF,Grigor Dimitrov,Tommy Paul,Tommy Paul,0.4427,0.5573
+SF,Jannik Sinner,Carlos Alcaraz,Jannik Sinner,0.5715,0.5715
+SF,Daniil Medvedev,Grigor Dimitrov,Daniil Medvedev,0.7701,0.7701
+F,Jannik Sinner,Carlos Alcaraz,Jannik Sinner,0.5715,0.5715
