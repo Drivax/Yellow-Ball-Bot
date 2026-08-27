@@ -48,6 +48,11 @@ HEADERS = {
     "Accept-Language": "en-US,en;q=0.9",
 }
 
+_FLASHSCORE_BLOCK_MARKERS = (
+    "the requested page can't be displayed",
+    "flashscore.mobi",
+)
+
 # ---------------------------------------------------------------------------
 # Current ATP rankings / ELO estimates (April 2026)
 # Used to assign ELO when the trained model is not available.
@@ -191,7 +196,12 @@ def _get_html(url: str, params: dict | None = None) -> str | None:
         try:
             resp = requests.get(url, params=params, headers=HEADERS, timeout=15)
             if resp.status_code == 200:
-                return resp.text
+                response_text = resp.text
+                response_lower = response_text.lower()
+                if any(marker in response_lower for marker in _FLASHSCORE_BLOCK_MARKERS):
+                    logger.warning("Flashscore returned a blocked/placeholder page: %s", url)
+                    return None
+                return response_text
             if resp.status_code in {403, 404, 451}:
                 logger.debug("HTTP %s — not available: %s", resp.status_code, url)
                 return None
