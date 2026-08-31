@@ -16,10 +16,6 @@ build/
 # Jupyter checkpoints
 .ipynb_checkpoints/
 
-# Data files (downloaded at runtime)
-tennis-predictor/data/raw/
-tennis-predictor/data/processed/
-
 # Generated model artefacts
 tennis-predictor/models/best_model.pkl
 tennis-predictor/models/charts/
