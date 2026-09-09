@@ -1,61 +1,64 @@
 ************************************************************************
-                                                                        
-                      TENNIS PREDICTIONS - US OPEN                      
-            Year: 2026   |   Qualifying matches shown                 
-                                                                        
+
+                      TENNIS PREDICTIONS — US OPEN
+            Year: 2026   |   Generated: 2026-09-09 05:50 UTC
+
 ************************************************************************
 
   Surface: Hard (outdoor)  |  Venue: USTA Billie Jean King National Tennis Center
   Location: Flushing Meadows, New York
-  Model: ELO (fallback)  |  Unknown qualifying players use neutral ratings
 
 ========================================================================
-                  ATP US OPEN 2026 QUALIFYING                         
+                  ATP US OPEN 2026  (HARD, GRAND SLAM)
+Surface: Hard   |   Model: Elo: manual priors + completed US Open results (uncalibrated)
 ========================================================================
-  Scheduled: 25 August 2026
+  Predicted Champion: TBD
 
-  [ Qualifying - 17:00 ]
+  [ Quarterfinal ]
   --------------------------------------------------------------------
-  B. Shick                      vs  Clement Tabur
-      > B. Shick  wins  (50.0% confidence)
-        (over Clement Tabur)
+  Alexander Blockx               vs  Karen Khachanov
+      Scheduled: 2026-09-09T18:00:00+00:00 (UTC)
+      Source: https://site.api.espn.com/apis/site/v2/sports/tennis/atp/scoreboard?dates=20260909
+      ▶ Karen Khachanov  wins  (73.8% confidence)
+        (over Alexander Blockx)
 
-  Timofey Skatov                vs  Gilles-Arnaud Bailly
-      > Timofey Skatov  wins  (50.0% confidence)
-        (over Gilles-Arnaud Bailly)
+  Botic Van De Zandschulp        vs  Alexander Zverev
+      Scheduled: 2026-09-09T23:30:00+00:00 (UTC)
+      Source: https://site.api.espn.com/apis/site/v2/sports/tennis/atp/scoreboard?dates=20260909
+      ▶ Alexander Zverev  wins  (94.7% confidence)
+        (over Botic Van De Zandschulp)
 
-  M. Antonius                   vs  H. Searle
-      > M. Antonius  wins  (50.0% confidence)
-        (over H. Searle)
-
-  Scheduled: 26 August 2026
-
-  [ Qualifying - time to be determined ]
-  --------------------------------------------------------------------
-  Frederico Ferreira Silva      vs  Jurij Rodionov
-      > Frederico Ferreira Silva  wins  (50.0% confidence)
-        (over Jurij Rodionov)
-
-  Francesco Passaro             vs  Tom Gentzsch
-      > Francesco Passaro  wins  (50.0% confidence)
-        (over Tom Gentzsch)
-
-  Kyrian Jacquet                vs  Mohamed Aziz Dougaz
-      > Kyrian Jacquet  wins  (50.0% confidence)
-        (over Mohamed Aziz Dougaz)
-
-  Jacob Fearnley                vs  P. Luka
-      > Jacob Fearnley  wins  (50.0% confidence)
-        (over P. Luka)
-
-  Otto Virtanen                 vs  J. Pinnington Jones
-      > Otto Virtanen  wins  (50.0% confidence)
-        (over J. Pinnington Jones)
-
-  Daniel Rincón                 vs  J. Lee
-      > Daniel Rincón  wins  (50.0% confidence)
-        (over J. Lee)
 
 ========================================================================
-                             END OF REPORT                             
+                  WTA US OPEN 2026  (HARD, GRAND SLAM)
+Surface: Hard   |   Model: Elo: manual priors + completed US Open results (uncalibrated)
+========================================================================
+  Predicted Champion: TBD
+
+  [ Quarterfinal ]
+  --------------------------------------------------------------------
+  Elena Rybakina                 vs  Zheng Qinwen
+      Scheduled: 2026-09-09T15:30:00+00:00 (UTC)
+      Source: https://site.api.espn.com/apis/site/v2/sports/tennis/wta/scoreboard?dates=20260909
+      ▶ Zheng Qinwen  wins  (50.4% confidence)
+        (over Elena Rybakina)
+
+  Coco Gauff                     vs  Mirra Andreeva
+      Scheduled: 2026-09-09T16:30:00+00:00 (UTC)
+      Source: https://site.api.espn.com/apis/site/v2/sports/tennis/wta/scoreboard?dates=20260909
+      ▶ Coco Gauff  wins  (72.9% confidence)
+        (over Mirra Andreeva)
+
+  [ Semifinal ]
+  --------------------------------------------------------------------
+  Jessica Pegula                 vs  Aryna Sabalenka
+      Scheduled: 2026-09-10T04:00:00+00:00 (UTC)
+      Time not yet confirmed; timestamp is a date placeholder.
+      Source: https://site.api.espn.com/apis/site/v2/sports/tennis/wta/scoreboard?dates=20260909
+      ▶ Aryna Sabalenka  wins  (72.9% confidence)
+        (over Jessica Pegula)
+
+
+========================================================================
+                             END OF REPORT
 ========================================================================

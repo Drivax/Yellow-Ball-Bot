@@ -72,13 +72,18 @@ class EloPredictor:
         self.elo_table: dict[str, float] = (
             ATP_PLAYER_ELO if tour == "ATP" else WTA_PLAYER_ELO
         )
-        self.name = "ELO (fallback)"
+        from scraping.scraper_us_open import name_key
+        self.elo_table = {name_key(k): v for k, v in self.elo_table.items()}
+        self.name = "ELO estimate (manual ratings; uncalibrated)"
 
     def _elo(self, player: str) -> float:
-        return self.elo_table.get(player, 1600)
+        from scraping.scraper_us_open import name_key
+        return self.elo_table.get(name_key(player))
 
     def predict_proba(self, p1: str, p2: str) -> float:
         """Return P(p1 beats p2) using the standard Elo formula."""
+        if self._elo(p1) is None or self._elo(p2) is None:
+            return float("nan")
         elo_diff = self._elo(p1) - self._elo(p2)
         return 1.0 / (1.0 + math.pow(10.0, -elo_diff / 400.0))
 
@@ -121,6 +126,9 @@ class ModelPredictor:
             else {}
         )
 
+        if p1 not in player_stats or p2 not in player_stats:
+            return float("nan")
+
         X = build_match_feature_vector(
             p1_name=p1,
             p2_name=p2,
@@ -134,6 +142,28 @@ class ModelPredictor:
         )
         proba = self.model.predict_proba(X)[0]
         return float(proba[1])
+
+
+class TournamentEloPredictor(EloPredictor):
+    """Baseline Elo learned only from verified completed matches of this edition.
+
+    Legacy manual priors (1500 for unseen players), K=32. This is a form estimate, not a calibrated
+    whole-career strength model. Unknown players are left unpredicted.
+    """
+
+    def __init__(self, results, tour="ATP"):
+        from scraping.scraper_us_open import name_key
+        super().__init__(tour)
+        self.samples = {}
+        self.name = "Elo: manual priors + completed US Open results (uncalibrated)"
+        for result in sorted(results, key=lambda r: (r["date"], r["id"])):
+            winner, loser = name_key(result["winner"]), name_key(result["loser"])
+            ew, el = self.elo_table.get(winner, 1500), self.elo_table.get(loser, 1500)
+            expected = 1 / (1 + 10 ** ((el - ew) / 400))
+            change = 32 * (1 - expected)
+            self.elo_table[winner], self.elo_table[loser] = ew + change, el - change
+            for player in (winner, loser):
+                self.samples[player] = self.samples.get(player, 0) + 1
 
 
 # ---------------------------------------------------------------------------
@@ -152,6 +182,7 @@ def predict_matches(
     Add prediction columns to a matches DataFrame.
     Works with both EloPredictor and ModelPredictor.
     """
+    from scraping.scraper_us_open import name_key
     rows = []
     for _, row in matches_df.iterrows():
         p1 = str(row["player1"])
@@ -169,20 +200,34 @@ def predict_matches(
         else:
             p1_win_prob = predictor.predict_proba(p1, p2)
 
-        predicted_winner = p1 if p1_win_prob >= 0.5 else p2
+        if not math.isfinite(p1_win_prob):
+            predicted_winner = "Insufficient player data"
+        elif not 0 <= p1_win_prob <= 1:
+            raise ValueError("Invalid predicted probability")
+        else:
+            predicted_winner = p1 if p1_win_prob >= 0.5 else p2
         confidence = p1_win_prob if p1_win_prob >= 0.5 else (1.0 - p1_win_prob)
 
         rows.append(
             {
+                **row.to_dict(),
                 "round": rnd,
                 "player1": p1,
                 "player2": p2,
                 "predicted_winner": predicted_winner,
                 "p1_win_prob": round(p1_win_prob, 4),
+                "p2_win_prob": round(1 - p1_win_prob, 4),
                 "confidence": round(confidence, 4),
+                "prediction_method": predictor.name,
+                "prediction_status": "estimated" if math.isfinite(p1_win_prob) else "insufficient_data",
+                "p1_sample_matches": getattr(predictor, "samples", {}).get(name_key(p1)),
+                "p2_sample_matches": getattr(predictor, "samples", {}).get(name_key(p2)),
             }
         )
-    return pd.DataFrame(rows)
+    columns = list(dict.fromkeys([*matches_df.columns, "round", "player1", "player2",
+                                "predicted_winner", "p1_win_prob", "p2_win_prob", "confidence",
+                                "prediction_method", "prediction_status", "p1_sample_matches", "p2_sample_matches"]))
+    return pd.DataFrame(rows, columns=columns)
 
 
 # ---------------------------------------------------------------------------
@@ -197,7 +242,7 @@ def _hr(char: str = "=") -> str:
 
 
 def _centre(text: str) -> str:
-    return text.center(_WIDTH)
+    return text.center(_WIDTH).rstrip()
 
 
 def _format_section(
@@ -211,6 +256,10 @@ def _format_section(
     lines.append(_centre(f"  {tournament_name.upper()}  "))
     lines.append(_centre(f"Surface: {surface}   |   Model: {predictor_name}"))
     lines.append(_hr())
+
+    if predictions_df.empty:
+        lines.append("  No confirmed upcoming singles matches published.")
+        return lines
 
     final_rows = predictions_df[predictions_df["round"] == "F"]
     champion = final_rows["predicted_winner"].iloc[0] if not final_rows.empty else "TBD"
@@ -232,6 +281,14 @@ def _format_section(
             conf = row["confidence"]
             loser = p2 if winner == p1 else p1
             lines.append(f"  {p1:<30} vs  {p2}")
+            lines.append(f"      Scheduled: {row.get('scheduled_at', 'Unknown')} (UTC)")
+            if not row.get("time_confirmed", True):
+                lines.append("      Time not yet confirmed; timestamp is a date placeholder.")
+            lines.append(f"      Source: {row.get('source', 'Unknown')}")
+            if row.get("prediction_status") == "insufficient_data":
+                lines.append("      Insufficient player data for a prediction.")
+                lines.append("")
+                continue
             lines.append(f"      ▶ {winner}  wins  ({conf:.1%} confidence)")
             lines.append(f"        (over {loser})")
             lines.append("")
@@ -337,7 +394,7 @@ def main() -> None:
     # Load model or fall back to ELO predictor
     # -----------------------------------------------------------------------
     features_df = pd.DataFrame()
-    if FEATURES_CSV.exists():
+    if not args.no_model and BEST_MODEL_PATH.exists() and FEATURES_CSV.exists():
         features_df = pd.read_csv(FEATURES_CSV, parse_dates=["date"])
 
     use_model = not args.no_model and BEST_MODEL_PATH.exists()
@@ -347,7 +404,8 @@ def main() -> None:
             with open(BEST_MODEL_PATH, "rb") as f:
                 bundle = pickle.load(f)
             atp_predictor: ModelPredictor | EloPredictor = ModelPredictor(bundle, features_df)
-            wta_predictor: ModelPredictor | EloPredictor = ModelPredictor(bundle, features_df)
+            # This model is trained on ATP history only.
+            wta_predictor = TournamentEloPredictor(wta_matches_df.attrs.get("completed_results", []), "WTA")
             logger.info("Loaded trained model: %s", bundle["name"])
         except Exception as exc:
             logger.warning("Could not load model (%s). Falling back to ELO.", exc)
@@ -355,8 +413,8 @@ def main() -> None:
 
     if not use_model:
         logger.info("Using ELO fallback predictor.")
-        atp_predictor = EloPredictor("ATP")
-        wta_predictor = EloPredictor("WTA")
+        atp_predictor = TournamentEloPredictor(atp_matches_df.attrs.get("completed_results", []))
+        wta_predictor = TournamentEloPredictor(wta_matches_df.attrs.get("completed_results", []), "WTA")
 
     # -----------------------------------------------------------------------
     # Generate predictions
@@ -396,6 +454,9 @@ def main() -> None:
             label = ROUND_LABELS.get(rnd, rnd)
             print(f"\n  [{label}]")
             for _, row in sub.iterrows():
+                if row["prediction_status"] == "insufficient_data":
+                    print(f"    {row['player1']} vs {row['player2']}: insufficient player data")
+                    continue
                 print(
                     f"    {row['player1']:<28} vs  {row['player2']:<28}"
                     f"  →  {row['predicted_winner']}  ({row['confidence']:.1%})"

@@ -1,0 +1,38 @@
+name: US Open upcoming matches
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "15 */6 * 8,9 *"
+  pull_request:
+    paths:
+      - "tennis-predictor/scraping/scraper_us_open.py"
+      - "tennis-predictor/us_open_predict.py"
+      - "tennis-predictor/tests/**"
+      - ".github/workflows/us-open.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tennis-predictor
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests pandas
+      - run: python -m unittest discover -s tests -v
+      - name: Fetch confirmed matches and generate predictions
+        if: github.event_name != 'pull_request'
+        run: python us_open_predict.py --no-model
+      - uses: actions/upload-artifact@v4
+        if: success() && github.event_name != 'pull_request'
+        with:
+          name: us-open-predictions
+          path: tennis-predictor/results/us_open_*
+          retention-days: 7
