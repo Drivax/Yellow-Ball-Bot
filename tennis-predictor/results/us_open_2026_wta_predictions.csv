@@ -1,44 +1,4 @@
-round,player1,player2,predicted_winner,p1_win_prob,confidence
-R128,Aryna Sabalenka,Anna Kalinskaya,Aryna Sabalenka,0.9264,0.9264
-R128,Emma Navarro,Paula Badosa,Emma Navarro,0.6788,0.6788
-R128,Coco Gauff,Veronika Kudermetova,Coco Gauff,0.8632,0.8632
-R128,Danielle Collins,Beatriz Haddad Maia,Danielle Collins,0.5715,0.5715
-R128,Iga Swiatek,Caroline Wozniacki,Iga Swiatek,0.9042,0.9042
-R128,Mirra Andreeva,Daria Kasatkina,Mirra Andreeva,0.5573,0.5573
-R128,Madison Keys,Karolina Muchova,Madison Keys,0.6401,0.6401
-R128,Jessica Pegula,Liudmila Samsonova,Jessica Pegula,0.7491,0.7491
-R128,Elena Rybakina,Elina Svitolina,Elena Rybakina,0.7491,0.7491
-R128,Qinwen Zheng,Maria Sakkari,Qinwen Zheng,0.7034,0.7034
-R128,Jasmine Paolini,Barbora Krejcikova,Barbora Krejcikova,0.4856,0.5144
-R128,Anna Kalinskaya,Beatriz Haddad Maia,Beatriz Haddad Maia,0.4569,0.5431
-R64,Aryna Sabalenka,Emma Navarro,Aryna Sabalenka,0.8415,0.8415
-R64,Coco Gauff,Danielle Collins,Coco Gauff,0.7898,0.7898
-R64,Iga Swiatek,Mirra Andreeva,Iga Swiatek,0.8255,0.8255
-R64,Madison Keys,Jessica Pegula,Jessica Pegula,0.3869,0.6131
-R64,Elena Rybakina,Qinwen Zheng,Elena Rybakina,0.5431,0.5431
-R64,Jasmine Paolini,Karolina Muchova,Jasmine Paolini,0.5573,0.5573
-R64,Daria Kasatkina,Barbora Krejcikova,Barbora Krejcikova,0.4569,0.5431
-R64,Paula Badosa,Liudmila Samsonova,Liudmila Samsonova,0.4427,0.5573
-R32,Aryna Sabalenka,Coco Gauff,Aryna Sabalenka,0.6788,0.6788
-R32,Iga Swiatek,Madison Keys,Iga Swiatek,0.7898,0.7898
-R32,Elena Rybakina,Jasmine Paolini,Elena Rybakina,0.6661,0.6661
-R32,Daria Kasatkina,Emma Navarro,Emma Navarro,0.4145,0.5855
-R32,Jessica Pegula,Qinwen Zheng,Jessica Pegula,0.5715,0.5715
-R32,Danielle Collins,Barbora Krejcikova,Barbora Krejcikova,0.4427,0.5573
-R32,Mirra Andreeva,Paula Badosa,Mirra Andreeva,0.6532,0.6532
-R32,Karolina Muchova,Liudmila Samsonova,Karolina Muchova,0.5144,0.5144
-R16,Aryna Sabalenka,Iga Swiatek,Aryna Sabalenka,0.5573,0.5573
-R16,Coco Gauff,Madison Keys,Coco Gauff,0.6912,0.6912
-R16,Elena Rybakina,Emma Navarro,Elena Rybakina,0.6131,0.6131
-R16,Daria Kasatkina,Jessica Pegula,Jessica Pegula,0.2847,0.7153
-R16,Qinwen Zheng,Danielle Collins,Qinwen Zheng,0.6661,0.6661
-R16,Barbora Krejcikova,Mirra Andreeva,Mirra Andreeva,0.4856,0.5144
-R16,Jasmine Paolini,Karolina Muchova,Jasmine Paolini,0.5573,0.5573
-R16,Paula Badosa,Liudmila Samsonova,Liudmila Samsonova,0.4427,0.5573
-QF,Aryna Sabalenka,Coco Gauff,Aryna Sabalenka,0.6788,0.6788
-QF,Iga Swiatek,Elena Rybakina,Iga Swiatek,0.7268,0.7268
-QF,Jessica Pegula,Qinwen Zheng,Jessica Pegula,0.5715,0.5715
-QF,Mirra Andreeva,Jasmine Paolini,Mirra Andreeva,0.5288,0.5288
-SF,Aryna Sabalenka,Iga Swiatek,Aryna Sabalenka,0.5573,0.5573
-SF,Jessica Pegula,Mirra Andreeva,Jessica Pegula,0.6661,0.6661
-F,Aryna Sabalenka,Iga Swiatek,Aryna Sabalenka,0.5573,0.5573
+match_id,round,player1,player2,tour,surface,year,tournament,scheduled_at,time_confirmed,status,source,fetched_at,predicted_winner,p1_win_prob,p2_win_prob,confidence,prediction_method,prediction_status,p1_sample_matches,p2_sample_matches
+182576,QF,Elena Rybakina,Zheng Qinwen,WTA,Hard,2026,US Open 2026,2026-09-09T15:30:00+00:00,True,scheduled,https://site.api.espn.com/apis/site/v2/sports/tennis/wta/scoreboard?dates=20260909,2026-09-09T05:50:46.130202+00:00,Zheng Qinwen,0.4958,0.5042,0.5042,Elo: manual priors + completed US Open results (uncalibrated),estimated,4,4
+182573,QF,Coco Gauff,Mirra Andreeva,WTA,Hard,2026,US Open 2026,2026-09-09T16:30:00+00:00,True,scheduled,https://site.api.espn.com/apis/site/v2/sports/tennis/wta/scoreboard?dates=20260909,2026-09-09T05:50:46.130202+00:00,Coco Gauff,0.7293,0.2707,0.7293,Elo: manual priors + completed US Open results (uncalibrated),estimated,4,4
+182553,SF,Jessica Pegula,Aryna Sabalenka,WTA,Hard,2026,US Open 2026,2026-09-10T04:00:00+00:00,False,scheduled,https://site.api.espn.com/apis/site/v2/sports/tennis/wta/scoreboard?dates=20260909,2026-09-09T05:50:46.130202+00:00,Aryna Sabalenka,0.271,0.729,0.729,Elo: manual priors + completed US Open results (uncalibrated),estimated,5,5

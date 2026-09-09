@@ -324,15 +324,63 @@ def render_batch_tab(model, feature_cols: list[str], features_df: pd.DataFrame) 
     )
 
 
+def render_us_open_tab() -> None:
+    from datetime import date
+    from scraping.scraper_us_open import get_us_open_matches, ScheduleUnavailable
+    from us_open_predict import TournamentEloPredictor, predict_matches
+
+    st.subheader("US Open — prochains matchs")
+    st.caption("Simples ATP et WTA confirmés par ESPN. Les adversaires encore inconnus sont exclus.")
+    st.info("Estimations Elo : notes initiales manuelles du projet, actualisées avec les résultats "
+            "terminés de cette édition. Sans calibration validée. Le nombre de matchs utilisés est affiché.")
+    year = st.number_input("Année du tournoi", min_value=1968, max_value=2100, value=date.today().year)
+    if st.button("Actualiser les prochains matchs", type="primary"):
+        # Clear earlier data before a refresh, including when a provider fails.
+        st.session_state.us_open_results = {}
+        st.session_state.us_open_year = year
+        for tour in ("ATP", "WTA"):
+            try:
+                with st.spinner(f"Récupération {tour}…"):
+                    matches = get_us_open_matches(tour, year)
+                    predictor = TournamentEloPredictor(matches.attrs.get("completed_results", []), tour)
+                    st.session_state.us_open_results[tour] = predict_matches(matches, predictor, tour)
+            except ScheduleUnavailable as exc:
+                st.session_state.us_open_results[tour] = str(exc)
+    if st.session_state.get("us_open_year") != year:
+        return
+    for tour, result in st.session_state.get("us_open_results", {}).items():
+        st.markdown(f"**{tour}**")
+        if isinstance(result, str):
+            st.error(f"Calendrier indisponible : {result}")
+        elif result.empty:
+            st.info("Aucun prochain match confirmé publié pour cette édition.")
+        else:
+            # Hide matches that have started since the last button click.
+            times = pd.to_datetime(result["scheduled_at"], utc=True)
+            now = pd.Timestamp.now(tz="UTC")
+            result = result[(result.time_confirmed & (times > now)) |
+                            (~result.time_confirmed & (times.dt.date >= now.date()))].copy()
+            st.caption("Horaires UTC. Si time_confirmed est faux, seule la date est connue. "
+                       "Actualise pour vérifier les changements de programme.")
+            st.dataframe(result, hide_index=True, use_container_width=True)
+            st.download_button(f"Télécharger les prédictions {tour}",
+                               result.to_csv(index=False).encode("utf-8"),
+                               file_name=f"us_open_{year}_{tour.lower()}_predictions.csv", mime="text/csv")
+
+
 def main() -> None:
     st.set_page_config(page_title="Tennis Match Predictor", page_icon="T", layout="wide")
     apply_ui_styles()
     st.title("Tennis Match Predictor")
     st.caption("Predict one match or many matches with your trained model bundle.")
 
+    render_us_open_tab()
+    st.divider()
+
     if not MODEL_PATH.exists():
-        st.error("Model not found at models/best_model.pkl. Train first: python models/train.py")
-        st.stop()
+        st.info("Les prédictions personnalisées nécessitent un modèle entraîné. "
+                "La récupération US Open ci-dessus reste disponible.")
+        return
 
     try:
         bundle = load_model_bundle()

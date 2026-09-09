@@ -11,6 +11,7 @@ Usage:
 
 import logging
 import time
+from datetime import date
 from pathlib import Path
 
 import requests
@@ -30,7 +31,7 @@ GITHUB_RAW_BASE = (
     "https://raw.githubusercontent.com/JeffSackmann/tennis_atp/master"
 )
 FIRST_YEAR = 1968
-LAST_YEAR = 2025
+LAST_YEAR = date.today().year
 MAX_RETRIES = 5
 RETRY_BACKOFF = 2  # seconds
 
@@ -81,7 +82,7 @@ def download_main_tour_matches() -> None:
     for year in tqdm(years, desc="Downloading ATP match files"):
         filename = f"atp_matches_{year}.csv"
         dest = RAW_DATA_DIR / filename
-        if dest.exists():
+        if dest.exists() and year < LAST_YEAR - 1:
             logger.debug("Already exists, skipping: %s", filename)
             skipped += 1
             continue
@@ -112,7 +113,7 @@ def download_futures_and_challengers() -> None:
         for year in tqdm(years, desc=f"Downloading {prefix}"):
             filename = f"{prefix}_{year}.csv"
             dest = RAW_DATA_DIR / filename
-            if dest.exists():
+            if dest.exists() and year < LAST_YEAR - 1:
                 continue
             url = f"{GITHUB_RAW_BASE}/{filename}"
             _download_file(url, dest)
